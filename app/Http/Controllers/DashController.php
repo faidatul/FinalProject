@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class DashController extends Controller
@@ -9,6 +10,7 @@ class DashController extends Controller
     
     public function index() {
         $this->middleware('auth');
-        return view('dashboard');
+        $barangs = Barang::paginate(20);
+        return view('dashboard', compact('barangs'));
     }
 }
