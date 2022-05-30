@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Barang;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/home', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
 
 require __DIR__.'/auth.php';
