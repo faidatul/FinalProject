@@ -5,16 +5,12 @@
         </div>
         @foreach($barangs as $barang)
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ url('uploads') }}/{{ $barang->gambar }}" alt="Card image cap">
+            <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">{{ $barang->nama_barang }}</h5>
-            <strong>Harga :</strong> Rp. {{ number_format($barang->harga)}} <br>
-                    <strong>Stok :</strong> {{ $barang->stok }} <br>
-                    <hr>
-                    <strong>Keterangan :</strong> <br>
-                    {{ $barang->keterangan }} 
-            <a href="#" class="btn btn-primary">Pesan</a>
-         </div>
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
         @endforeach
     </x-slot>
 </x-app-layout>
