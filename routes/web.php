@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Barang;
 use Illuminate\Http\Request;
 
 /*
@@ -20,7 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'App\Http\Controllers\DashController@index')->name('dashboard');
+Route::get('/pesan/{id}', 'App\Http\Controllers\PesanController@index')->name('pesan');
 
+Route::post('pesan/{id}', 'App\Http\Controllers\PesanController@pesan');
 
 
 require __DIR__.'/auth.php';

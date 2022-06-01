@@ -6,7 +6,7 @@
         
         @foreach($barangs as $barang)
         <div class="max-w-sm rounded overflow-hidden shadow-lg mt-8">
-            <img class = "object-cover h-2 max-w-12" src="{{ url('uploads') }}/{{ $barang->gambar }}" alt="gambar produk">
+            <img class = "object-cover h-2 max-w-12" src="{{ url('uploads') }}/{{ $barang->gambar }}" width="25%" alt="gambar produk">
             <div class="px-6 py-4">
                 <p class="font-bold text-xl mb-2">{{ $barang->nama_barang }}</p><br>
             </div>
@@ -15,7 +15,7 @@
                     <span>Stok :</span> {{ $barang->stok }} <br>
                     <span>Keterangan : </span>{{ $barang->keterangan }}<br> 
                 </div>
-                <a href="#" class="text-[#f59e0b] font-bold"><i class="fa fa-shopping-cart"></i> Pesan</a><br></br>
+                <a href="{{ url('pesan')}}/{{ $barang->id }}">Pesan</a><br></br>
         </div>
         @endforeach
     </x-slot>
