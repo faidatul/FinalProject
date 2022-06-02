@@ -23,6 +23,8 @@
         <div class="card">
             <div class="card-body">
             <h5>Checkout</h5>
+            @if(!empty($pesanan))
+            <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
             <table class="table table-bordered">
             <thead>
                 <tr>
@@ -60,13 +62,14 @@
                     <td colspan="5" align="right"><strong>Total Harga :</strong></td>
                     <td align="right"><strong>Rp. {{ number_format($pesanan->jumlah_harga) }}</strong></td>
                     <td>
-                        <a href="{{ url('konfirmasi-check-out') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
+                        <a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
                         Check Out
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        @endif
             </div>
         </div>
     </div>

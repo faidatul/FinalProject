@@ -83,10 +83,8 @@ class PesanController extends Controller
     {
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
  		$pesanan_details = [];
-        if(!empty($pesanan))
-        {
+        if(!empty($pesanan)){
             $pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
-
         }
         
         return view('checkout', compact('pesanan', 'pesanan_details'));
@@ -106,4 +104,40 @@ class PesanController extends Controller
         Alert::success('Dihapus', 'Pesanan Sukses Dihapus');
         return redirect('checkout');
     }
+
+	public function konfirmasi()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+
+        if(empty($user->alamat))
+        {
+            Alert::error('Gagal', 'Lengkapi Alamat Anda');
+            return redirect('checkout');
+        }
+
+        if(empty($user->nohp))
+        {
+            Alert::error('Gagal', 'Lengkapi Nomor Telepon Anda');
+            return redirect('checkout');
+        }
+
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        $pesanan_id = $pesanan->id;
+        $pesanan->status = 1;
+        $pesanan->update();
+
+        $pesanan_details = PesananDetail::where('pesanan_id', $pesanan_id)->get();
+        foreach ($pesanan_details as $pesanan_detail) {
+            $barang = Barang::where('id', $pesanan_detail->barang_id)->first();
+            $barang->stok = $barang->stok-$pesanan_detail->jumlah;
+            $barang->update();
+        }
+
+
+
+        Alert::success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
+        return redirect('checkout');
+
+    }
+
 }
