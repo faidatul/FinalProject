@@ -12,7 +12,7 @@
     <li>
       <div class="flex items-center">
         <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Checkout</a>
+        <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Keranjang</a>
       </div>
     </li>
     </ol>
@@ -22,7 +22,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <h5>Checkout</h5>
+            <h5>Keranjang Anda</h5>
             @if(!empty($pesanan))
             <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
             <table class="table table-bordered">
@@ -62,9 +62,11 @@
                     <td colspan="5" align="right"><strong>Total Harga :</strong></td>
                     <td align="right"><strong>Rp. {{ number_format($pesanan->jumlah_harga) }}</strong></td>
                     <td>
+                        @if(!empty($pesanan_detail))
                         <a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
                         Check Out
                         </a>
+                        @endif
                     </td>
                 </tr>
             </tbody>

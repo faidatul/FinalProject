@@ -27,4 +27,10 @@ Route::get('checkout', 'App\Http\Controllers\PesanController@check_out');
 Route::delete('checkout/{id}', 'App\Http\Controllers\PesanController@delete');
 Route::get('konfirmasi-checkout', 'App\Http\Controllers\PesanController@konfirmasi');
 
+
+Route::get('profile', 'App\Http\Controllers\ProfileController@index');
+Route::post('profile', 'App\Http\Controllers\ProfileController@update');
+
+Route::get('history', 'App\Http\Controllers\HistoryController@index');
+Route::get('historydetail/{id}', 'App\Http\Controllers\HistoryController@detail');
 require __DIR__.'/auth.php';

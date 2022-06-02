@@ -32,13 +32,22 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
+                        <form method="HEAD" action="{{ url('profile') }}">
+                            @csrf
+                            <x-dropdown-link :href="url('profile')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Profil') }}
+                            </x-dropdown-link>
+                        </form>
+                        <form method="HEAD" action="{{ url('history') }}">
+                            @csrf
+                            <x-dropdown-link :href="url('history')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Histori Pesanan') }}
+                            </x-dropdown-link>
+                        </form>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Keluar') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

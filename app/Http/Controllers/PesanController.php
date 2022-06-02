@@ -39,7 +39,7 @@ class PesanController extends Controller
 	    	$pesanan->tanggal = $tanggal;
 	    	$pesanan->status = 0;
 	    	$pesanan->jumlah_harga = 0;
-            $pesanan->kode = mt_rand(100, 999);
+            $pesanan->kode = mt_rand(1000, 9999);
 	    	$pesanan->save();
     	}
     	
@@ -136,7 +136,7 @@ class PesanController extends Controller
 
 
         Alert::success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
-        return redirect('checkout');
+        return redirect('dashboard');
 
     }
 
