@@ -78,4 +78,32 @@ class PesanController extends Controller
     	return redirect('dashboard');
 
     }
+
+	public function check_out()
+    {
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+ 		$pesanan_details = [];
+        if(!empty($pesanan))
+        {
+            $pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
+
+        }
+        
+        return view('checkout', compact('pesanan', 'pesanan_details'));
+    }
+
+	public function delete($id)
+    {
+        $pesanan_detail = PesananDetail::where('id', $id)->first();
+
+        $pesanan = Pesanan::where('id', $pesanan_detail->pesanan_id)->first();
+        $pesanan->jumlah_harga = $pesanan->jumlah_harga-$pesanan_detail->jumlah_harga;
+        $pesanan->update();
+
+
+        $pesanan_detail->delete();
+
+        Alert::success('Dihapus', 'Pesanan Sukses Dihapus');
+        return redirect('checkout');
+    }
 }

@@ -23,5 +23,7 @@ Route::get('/pesan/{id}', 'App\Http\Controllers\PesanController@index')->name('p
 
 Route::post('pesan/{id}', 'App\Http\Controllers\PesanController@pesan');
 
+Route::get('checkout', 'App\Http\Controllers\PesanController@check_out');
+Route::delete('checkout/{id}', 'App\Http\Controllers\PesanController@delete');
 
 require __DIR__.'/auth.php';
