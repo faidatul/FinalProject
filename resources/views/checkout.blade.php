@@ -22,7 +22,6 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <h5>Keranjang Anda</h5>
             @if(!empty($pesanan))
             <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
             <table class="table table-bordered">
