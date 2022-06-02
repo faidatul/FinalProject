@@ -6,6 +6,7 @@ use App\Models\Pesanan;
 use App\Models\User;
 use App\Models\PesananDetail;
 use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -73,7 +74,7 @@ class PesanController extends Controller
     	$pesanan->jumlah_harga = $pesanan->jumlah_harga+$barang->harga*$request->jumlah_pesan;
     	$pesanan->update();
     	
-        // Alert::success('Pesanan Sukses Masuk Keranjang', 'Success');
+        Alert::success('Berhasil', 'Pesanan Sudah Masuk Keranjang!');
     	return redirect('dashboard');
 
     }
