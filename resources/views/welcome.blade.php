@@ -62,10 +62,10 @@
                     @auth
                         <a href="{{ url('/dashboard') }}">Beranda</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Masuk</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Daftar</a>
                         @endif
                     @endauth
                 </div>

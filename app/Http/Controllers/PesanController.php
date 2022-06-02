@@ -135,7 +135,7 @@ class PesanController extends Controller
 
 
 
-        Alert::success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
+        Alert::success('Pesanan Sukses Check Out Silahkan Lihat Histori Untuk Pembayaran', '');
         return redirect('dashboard');
 
     }
