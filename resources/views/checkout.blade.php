@@ -2,24 +2,27 @@
     <x-slot name="header">
 
 <!-- breadcrumb -->
-    <nav class="flex" aria-label="Breadcrumb">
+<div class="container">
+<nav class="flex" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
     <li class="inline-flex items-center">
-      <a href="{{ url('dashboard')}}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+      <a href="{{ url('dashboard')}}" class="inline-flex items-center text-sm font-medium bread">
         <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
         Halaman Utama</a>
     </li>
     <li>
       <div class="flex items-center">
-        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Keranjang</a>
+        <svg class="w-6 h-6 text-gray-400" fill="#B26B00" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        <a href="#" class="inline-flex items-center text-sm font-medium bread">Keranjang</a>
       </div>
     </li>
     </ol>
     </nav>
+</div>
 
 <!-- detail produk -->
     <div class="col-md-12">
+            <hr><h1 class="header">Keranjang</h1><hr>
         <div class="card">
             <div class="card-body">
             @if(!empty($pesanan))
@@ -52,7 +55,7 @@
                         <form action="{{ url('checkout') }}/{{ $pesanan_detail->id }}" method="post">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus data ?');">Hapus</button>
+                            <button type="submit" class="button-red" onclick="return confirm('Anda yakin akan menghapus data ?');">Hapus</button>
                         </form>
                     </td>
                 </tr>
@@ -62,7 +65,7 @@
                     <td align="right"><strong>Rp. {{ number_format($pesanan->jumlah_harga) }}</strong></td>
                     <td>
                         @if(!empty($pesanan_detail))
-                        <a href="{{ url('konfirmasi-checkout') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
+                        <a href="{{ url('konfirmasi-checkout') }}" class="button" onclick="return confirm('Anda yakin akan Check Out ?');">
                         Check Out
                         </a>
                         @endif

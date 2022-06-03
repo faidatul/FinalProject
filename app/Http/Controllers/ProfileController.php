@@ -35,7 +35,7 @@ class ProfileController extends Controller
     	
     	$user->update();
 
-    	Alert::success('Profil Berhasil Diganti', '');
+    	Alert::success('Profil Berhasil Diperbarui', '');
     	return redirect('profile');
     }
 }

@@ -74,7 +74,7 @@ class PesanController extends Controller
     	$pesanan->jumlah_harga = $pesanan->jumlah_harga+$barang->harga*$request->jumlah_pesan;
     	$pesanan->update();
     	
-        Alert::success('Berhasil', 'Pesanan Sudah Masuk Keranjang!');
+        Alert::success('Berhasil Masuk Keranjang', '');
     	return redirect('dashboard');
 
     }
@@ -101,7 +101,7 @@ class PesanController extends Controller
 
         $pesanan_detail->delete();
 
-        Alert::success('Dihapus', 'Pesanan Sukses Dihapus');
+        Alert::success('Pesanan Berhasil Dihapus', '');
         return redirect('checkout');
     }
 
@@ -135,7 +135,7 @@ class PesanController extends Controller
 
 
 
-        Alert::success('Check Out Berhasil. Silahkan Lihat Histori Untuk Pembayaran', '');
+        Alert::success('Check Out Berhasil.', '');
         return redirect('history');
 
     }

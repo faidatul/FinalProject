@@ -42,8 +42,25 @@
                 transition-duration: 0.4s;
             }
 
+            .button-red {
+                background-color: #FFFFFF; /* Green */
+                border-radius: 8px;
+                color: #FF0000;
+                padding: 5px 12px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                transition-duration: 0.4s;
+            }
+
             .button:hover {
                 background-color: #B26B00; /* Green */
+                color: #FFFFFF;
+            }
+
+            .button-red:hover {
+                background-color: #FF0000; /* Green */
                 color: #FFFFFF;
             }
 
@@ -57,15 +74,12 @@
             i {
                 width: 25px;
                 margin-right: 5px;
+                padding: 32px 32px;
                 display: inline-block;
                 color: #B26B00;
             }
 
-            .breadcrumb {
-                color: #828282;
-            }
-
-            .breadcrumb:hover {
+            .bread:hover {
                 color: #EFA73B;
             }
 
@@ -96,6 +110,22 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            .triggerdrop {
+                color: #B26B00;
+                padding: 5px 24px;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                font-size: 14px;
+                transition-duration: 0.4s;
+            }
+
+            .bread {
+                color: #B26B00;
+                transition-duration: 0.4s;
+            }
+            
 
         </style>
     </head>
