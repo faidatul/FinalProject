@@ -28,7 +28,8 @@
                 <div class="card-body">
                     <h3>Berhasil Check Out</h3>
                     <h3>Silahkan Lanjutkan pembayaran melalui Bank Mandiri dengan Nomer Rekening : 10911029993 dengan nominal Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</h3> </div>
-            </div>
+                    <h3>Lampirkan kode unik saat pembayaran.</h3>
+                </div>
             <div class="card mt-2">
                 <div class="card-body">
                     <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
@@ -69,12 +70,12 @@
                             </tr>
                             <tr>
                                 <td colspan="5" align="right"><strong>Kode Unik :</strong></td>
-                                <td align="right"><strong>{{ number_format($pesanan->kode) }}</strong></td>
+                                <td align="right"><strong>{{ $pesanan->kode }}</strong></td>
                                 
                             </tr>
                              <tr>
                                 <td colspan="5" align="right"><strong>Total yang harus ditransfer :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</strong></td>
+                                <td align="right"><strong>Rp. {{ number_format($pesanan->jumlah_harga) }}</strong></td>
                                 
                             </tr>
                         </tbody>

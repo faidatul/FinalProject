@@ -12,9 +12,60 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <style>
+            table, th, td {
+                border-collapse: collapse;
+                }
+            th, td {
+                padding: 5px;
+            }
+            th {
+                text-align: left;
+            }
+            .button {
+                background-color: #FFFFFF; /* Green */
+                border-radius: 8px;
+                border: 2px solid #B26B00;
+                color: #B26B00;
+                padding: 5px 24px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                transition-duration: 0.4s;
+            }
+
+            .button:hover {
+                background-color: #B26B00; /* Green */
+                color: #FFFFFF;
+            }
+
+            .header {
+                color: #B26B00;
+                font-size: 32px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            i {
+                width: 25px;
+                margin-right: 5px;
+            }
+
+            .breadcrumb {
+                color: #828282;
+            }
+
+            .breadcrumb:hover {
+                color: #EFA73B;
+            }
+
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
