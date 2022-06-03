@@ -24,15 +24,9 @@
     </ol>
     </nav>
     <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h3>Berhasil Check Out</h3>
-                    <h3>Silahkan Lanjutkan pembayaran melalui Bank Mandiri dengan Nomer Rekening : 10911029993 dengan nominal Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</h3> </div>
-                    <h3>Lampirkan kode unik saat pembayaran.</h3>
-                </div>
             <div class="card mt-2">
                 <div class="card-body">
-                    <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
+                    <hr><h3 class="header"> Detail Pemesanan</h3><hr>
                     @if(!empty($pesanan))
                     <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
                     <table class="table table-striped">
@@ -53,7 +47,7 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
-                                    <img src="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" width="100" alt="...">
+                                    <img class="center" src="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" width="100" alt="...">
                                 </td>
                                 <td>{{ $pesanan_detail->barang->nama_barang }}</td>
                                 <td>{{ $pesanan_detail->jumlah }} pcs</td>
@@ -81,7 +75,10 @@
                         </tbody>
                     </table>
                     @endif
-
+                    <hr><p>Silahkan Lanjutkan pembayaran melalui 
+                    <strong>Bank Mandiri (10911029993) </strong>dengan nominal 
+                    <strong>Rp. {{ number_format($pesanan->kode+$pesanan->jumlah_harga) }}</strong>. 
+                    Lampirkan kode unik saat pembayaran.</p></div><hr>
                 </div>
             </div>
     </x-slot>

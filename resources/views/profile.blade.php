@@ -19,10 +19,9 @@
     </nav>
 
 <!-- tampil profile -->
-    <div class="row">
-        <div class="col-md-6">
-            <h1>Profil Saya</h1> </div>
-        <div class="col-md-6 mt-5">
+        <div class="col-md-12 header">
+            <hr><h1>Profil Saya</h1><hr> </div>
+        <div class="col-md-12 mt-5">
             <table class="table">
                 <tbody>
                 <tr>
@@ -45,21 +44,26 @@
                     <td>:</td>
                     <td>{{ $user->alamat }}</td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
     </div>
 
 <!-- edit profile -->
-<div class="row">
-        <div class="col-md-6">
-            <h1>Edit Profil</h1> </div>
+<div class="container">
+        <div class="col-md-12 mt-2">
+            <h1 class="header">Edit Profil</h1> </div>
             <form method="POST" action="{{ url('profile') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -73,7 +77,7 @@
                         <div class="form-group row">
                             <label for="email" class="col-md-2 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
 
                                 @error('email')
@@ -87,7 +91,7 @@
                         <div class="form-group row">
                             <label for="nohp" class="col-md-2 col-form-label text-md-right">No. HP</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="nohp" type="text" class="form-control @error('nohp') is-invalid @enderror" name="nohp" value="{{ $user->nohp }}" required autocomplete="nohp" autofocus>
 
                                 @error('nohp')
@@ -101,7 +105,7 @@
                         <div class="form-group row">
                             <label for="alamat" class="col-md-2 col-form-label text-md-right">Alamat</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <textarea name="alamat" class="form-control @error('alamat') is-invalid @enderror" required="">{{ $user->alamat }}</textarea>
 
                                 @error('alamat')
@@ -115,7 +119,7 @@
                         <div class="form-group row">
                             <label for="password" class="col-md-2 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
 
                                 @error('password')
@@ -129,13 +133,13 @@
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-2 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-2">
+                            <div class="col offset-md-2">
                                 <button type="submit" class="btn btn-primary">
                                     Save
                                 </button>

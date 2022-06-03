@@ -22,10 +22,12 @@
                 border-collapse: collapse;
                 }
             th, td {
+
                 padding: 5px;
+                text-align: center;
             }
             th {
-                text-align: left;
+                text-align: center;
             }
             .button {
                 background-color: #FFFFFF; /* Green */
@@ -55,6 +57,8 @@
             i {
                 width: 25px;
                 margin-right: 5px;
+                display: inline-block;
+                color: #B26B00;
             }
 
             .breadcrumb {
@@ -63,6 +67,34 @@
 
             .breadcrumb:hover {
                 color: #EFA73B;
+            }
+
+            .row {
+                padding: 5px;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .row .card {
+                background-color: #FFE6BF;
+                padding: 5px;
+                margin-bottom: 15px;
+                height: 440px;
+            }
+
+            .frame {
+                width: 320px;
+                height: 180px;
+                overflow: hidden;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
 
         </style>

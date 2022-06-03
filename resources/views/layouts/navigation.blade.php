@@ -14,7 +14,7 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="flex-center position-ref full-height">
-                    <a href="{{ url('checkout') }}">Keranjang</a>
+                    <a href="{{ url('checkout') }}" ><i class="material-icons" >shopping_cart</i></a>
                 </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
