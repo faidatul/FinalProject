@@ -20,7 +20,7 @@
 
 <!-- tampil profile -->
         <div class="col-md-12 header">
-            <hr><h1>Profil Saya</h1><hr> </div>
+            <hr><h1>Profil Saya</h1><hr></div>
         <div class="col-md-12 mt-5">
             <table class="table">
                 <tbody>
@@ -44,13 +44,9 @@
                     <td>:</td>
                     <td>{{ $user->alamat }}</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </tbody>
         </table>
+        <hr><br><a style="float: right;" href="#" class="inline-flex items-center button">Edit Profil</a>
     </div>
 
 <!-- edit profile -->
